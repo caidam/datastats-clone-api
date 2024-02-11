@@ -10,8 +10,7 @@ Create an EC2 Ubuntu instance and pass the below user data to be ran at launch. 
 
 ```bash
 #!/bin/bash
-sudo apt-get update -y
-sudo apt-get upgrade -y
+sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install git -y
 sudo apt-get install docker.io -y
 sudo systemctl start docker
@@ -26,6 +25,5 @@ echo "POSTGRES_PORT=5432" >> .env
 echo "POSTGRES_SERVICE_IP=172.20.0.2" >> .env
 echo "DEBUG=True" >> .env
 echo "FILE_URL=https://gist.githubusercontent.com/caidam/0df73c14f35e27faf7f3ebdead5ba37e/raw/3524e2027ecdc8375e6f9528a21f4c8659f025ea/workshop5-wcs-datastats.csv" >> .env
-docker build -t flask-api .
-docker-compose up -d
+sudo docker build -t flask-api . && sudo docker-compose up -d
 ```
