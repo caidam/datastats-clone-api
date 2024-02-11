@@ -27,3 +27,8 @@ echo "DEBUG=True" >> .env
 echo "FILE_URL=https://gist.githubusercontent.com/caidam/0df73c14f35e27faf7f3ebdead5ba37e/raw/3524e2027ecdc8375e6f9528a21f4c8659f025ea/workshop5-wcs-datastats.csv" >> .env
 sudo docker build -t flask-api . && sudo docker-compose up -d
 ```
+
+### Https
+
+For learning purposes, possible to enable https by setting up a reverse proxy with SSL termination.
+Easy way using Nginx, certbot and dynu to obtain a free DNS.
